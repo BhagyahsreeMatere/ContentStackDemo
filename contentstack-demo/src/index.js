@@ -26,7 +26,7 @@ app.get('/posts', (req, res) => __awaiter(void 0, void 0, void 0, function* () {
         const response = yield axios_1.default.get('https://cdn.contentstack.io/v3/content_types/blog_post/entries', {
             headers: {
                 api_key: process.env.CONTENTSTACK_API_KEY || '', // Fallback to empty string if undefined
-                access_token: process.env.CONTENTSTACK_ACCESS_TOKEN || '',
+                access_token: process.env.CONTENTSTACK_DELIVERY_TOKEN || '',
             }
         });
         res.json(response.data.entries);
